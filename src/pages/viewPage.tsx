@@ -1,6 +1,6 @@
 import { Delete, ArrowForward } from "@mui/icons-material";
 import React, { useState, useReducer } from "react";
-import { List, ListItem, ListItemText, Chip } from "@mui/material";
+import { List, ListItem, ListItemText, Chip, Divider } from "@mui/material";
 export default function ViewPage(props: any) {
     let data = localStorage.getItem('input@code_soham');
     const [arr, setArray] = useState(data ? Array.from(JSON.parse(data)) : []);
@@ -23,16 +23,13 @@ export default function ViewPage(props: any) {
     return (
         <List
             sx={{
-                width: '60%',
-                maxWidth: '600px',
+                width: '90vw',
                 position: 'relative',
-                maxHeight: '80vh',
+                height: '80vh',
                 margin: 'auto',
                 marginTop: '1vh',
-                borderRadius: '10px',
                 color: 'white',
                 overflow: 'auto',
-                backgroundColor: '#529eebaa',
             }}
         >
             {arr.map((item: any, index: number) => {
@@ -45,15 +42,15 @@ export default function ViewPage(props: any) {
                             margin: 'auto',
                             display: 'flex',
                             flexDirection: 'row',
-                            justifyContent: 'space-between',
+                            justifyContent: 'space-evenly',
                         }}
                     >
                         <ListItemText
                         >
                             <Chip label={item[0]} />
-                            <Chip sx={{
+                            <ArrowForward sx={{
                                 margin: '0 20px'
-                            }} label={<ArrowForward />} />
+                            }} />
                             <Chip label={item[1]} />
                         </ListItemText>
                         <Delete
@@ -67,7 +64,7 @@ export default function ViewPage(props: any) {
                                 forceUpdate();
                             }}
                         />
-
+                        <Divider />
                     </ListItem>)
             })}
         </List>
