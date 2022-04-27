@@ -1,8 +1,8 @@
 {
   "name": "link-app",
   "version": "0.1.0",
-  "homepage":"/",
-  "private": true,
+  "homepage":"https://code-soham.github.io/linkApp",
+  "private": false,
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
